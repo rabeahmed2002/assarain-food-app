@@ -17,8 +17,11 @@ const Brands = () => {
   return (
     <section class="bg-white py-16 flex items-center justify-center">
       <div class="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Our Brands</h2>
-        <p class="text-lg text-gray-600 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 relative">
+          Our Brands
+          <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
+        </h2>{' '}
+        <p class="text-lg text-gray-600 mb-12 mt-4">
           Our way forward strategy is to work with more international brands and
           leverage our sales expertise and marketing skills in the market for
           the development of the brand & gain market share. Below are some of

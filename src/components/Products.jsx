@@ -9,12 +9,12 @@ const AssarainFoodProducts = () => {
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Assarain Food Products L.L.C.
         </h1>
-        <p className="text-lg italic">
+        <p className="text-lg">
           "Food, in the end, in our own tradition, is something holy. It's not
           about nutrients and calories. It's about sharing. It's about honesty.
           It's about identity."
           <br />
-          <span className="font-semibold">Louise Fresco</span>
+          <span className="font-semibold text-cyan-500">Louise Fresco</span>
         </p>
       </div>
 
@@ -51,11 +51,14 @@ const AssarainFoodProducts = () => {
           <img
             src={man}
             alt="Assarain Food Products"
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-full"
+            class="scale-x-[-1]"
           />
         </div>
       </div>
+      
     </div>
+    
   );
 };
 

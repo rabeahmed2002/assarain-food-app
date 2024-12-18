@@ -1,71 +1,57 @@
-import React from 'react'
-import warehouseImage from '../assets/warehouse.jpeg' // Replace with your actual image path
+import React from "react";
+import warehouseImage from "../assets/warehouse.jpeg";
+import play from "../assets/play.png";
 
 const DistributionSection = () => {
   return (
-    <section className="relative w-full h-[500px] overflow-hidden">
+    <section className="relative w-full h-auto md:h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={warehouseImage}
           alt="Warehouse"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-x-[-1]"
         />
       </div>
 
       {/* Content Box */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="bg-white w-full sm:w-2/3 md:w-1/2 lg:w-[35%] p-16 px-10 shadow-lg ml-16">
-          {/* Company Title */}
-          <h3 className="text-blue-600 text-lg font-medium mb-2">
-            Assarain Food Products L.L.C.
-          </h3>
-          {/* Main Heading */}
-          <h2 className="text-gray-900 text-2xl md:text-3xl font-bold leading-tight mb-4">
-            Oman Best Food Distributor <br />
-            Natural, Organic, Specialty, <br />
-            And Fresh.
-          </h2>
+      <div className="relative min-h-screen md:h-screen flex justify-center items-center px-4">
+        <div className="flex flex-col left-20 md:flex-row absolute w-[90%] md:w-[70%] lg:w-[50%] h-auto md:h-[50%]">
+          {/* Left Panel */}
+          <div className="w-full md:w-[65%] bg-white p-6 md:p-8 flex flex-col justify-center">
+            <h1 className="text-cyan-500 text-lg md:text-xl font-medium mb-2">
+              Assarain Food Products L.L.C.
+            </h1>
+            <h1 className="text-xl md:text-2xl font-bold leading-snug md:leading-tight mb-4 md:mb-6">
+              Oman Best Food Distributor Natural, Organic, Specialty, And Fresh.
+            </h1>
+            <button className="bg-[#003366] text-white text-xs md:text-sm font-medium px-6 py-3 md:py-4 w-fit">
+              REQUEST A QUOTE
+            </button>
+          </div>
 
-          {/* Button */}
-          <button className="bg-blue-600 text-white font-medium py-2 px-6 hover:bg-blue-700 transition duration-300">
-            REQUEST A QUOTE
-          </button>
-          <div className="absolute right-10 bottom-10 bg-blue-600 bg-opacity-90 text-white px-6 py-4 flex items-center space-x-4 rounded-md shadow-lg">
-          
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-blue-600"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1.5-11.793a.5.5 0 01.793-.407l4 2.5a.5.5 0 010 .85l-4 2.5A.5.5 0 018 11.5V8.207z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          {/* Video Section */}
+          <div className="w-full md:w-[35%] bg-cyan-500/80 flex flex-col justify-center items-center text-white py-8">
+            <div className="mb-4">
+              <div className="w-16 md:w-20 h-16 md:h-20 rounded-full flex items-center justify-center mb-4 cursor-pointer">
+                <img src={play} alt="Play Button" />
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-light leading-tight">
-                Video of a Warehouse
-              </p>
-              <p className="text-sm font-light">
-                How Our Distribution Process Works.
-              </p>
-              <a
-                href="#"
-                className="text-blue-200 text-xs hover:text-white underline mt-1 inline-block"
-              >
-                READ MORE
-              </a>
-            </div>
+            <p className="text-center text-xs md:text-sm mb-2 leading-tight">
+              Video of a Warehouse
+              <br />
+              How Our Distribution
+              <br />
+              Process Work...
+            </p>
+            <button className="text-sm md:text-base text-blue-900 font-bold border-b-2 border-white">
+              READ MORE
+            </button>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DistributionSection
+export default DistributionSection;

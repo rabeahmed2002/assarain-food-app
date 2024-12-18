@@ -1,43 +1,46 @@
-import React from "react";
-import person from "../assets/person.png"
-import vegetables from "../assets/veg.png"
-import meal from "../assets/meal.png"
+import React from 'react'
+import person from '../assets/person.png'
+import vegetables from '../assets/veg.png'
+import meal from '../assets/meal.png'
 
 const FeaturedNews = () => {
   const newsItems = [
     {
       id: 1,
-      image: "../assets/person.png",
-      category: "Insights",
-      title: "The Art of Sourcing: How We Find the Freshest Ingredients for You",
-      date: "September 20, 2023",
-      link: "#",
+      image: vegetables,
+      category: 'Insights',
+      title:
+        'The Art of Sourcing: How We Find the Freshest Ingredients for You',
+      date: 'September 20, 2023',
+      link: '#',
     },
     {
       id: 2,
-      image: "../assets/veg.png",
-      category: "Insights",
-      title: "Food Safety Matters: Our Rigorous Standards for Quality Assurance",
-      date: "September 20, 2023",
-      link: "#",
+      image: person,
+      category: 'Insights',
+      title:
+        'Food Safety Matters: Our Rigorous Standards for Quality Assurance',
+      date: 'September 20, 2023',
+      link: '#',
     },
     {
       id: 3,
-      image: "../assets/meal.png",
-      category: "Insights",
+      image: meal,
+      category: 'Insights',
       title:
-        "Healthy Eating Made Easy: Tips for a Balanced Diet with Our Products",
-      date: "September 20, 2023",
-      link: "#",
+        'Healthy Eating Made Easy: Tips for a Balanced Diet with Our Products',
+      date: 'September 20, 2023',
+      link: '#',
     },
-  ];
+  ]
 
   return (
-    <div className="bg-white py-10 px-5 md:px-20">
+    <div className="bg-white py-20 px-5 md:px-20">
       {/* Section Title */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 relative">
           Featured Assarain News
+          <span className="absolute bottom-[-8px] left-1/2 -translate-x-1/2 w-20 h-1 bg-blue-500"></span>
         </h2>
         <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
           We offer attractive prospects for fresh graduates as well as for
@@ -51,14 +54,8 @@ const FeaturedNews = () => {
       {/* News Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {newsItems.map((item) => (
-          <div
-            key={item.id}
-            className="rounded-lg shadow-lg overflow-hidden bg-white"
-          >
-            <img
-              src={item.image}
-              className="w-full h-48 object-cover"
-            />
+          <div key={item.id} className=" overflow-hidden bg-white">
+            <img src={item.image} className="w-full h-48 object-cover" />
             <div className="p-5">
               <p className="text-blue-500 text-sm font-semibold mb-2">
                 {item.category}
@@ -78,7 +75,7 @@ const FeaturedNews = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FeaturedNews;
+export default FeaturedNews

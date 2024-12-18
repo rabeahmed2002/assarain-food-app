@@ -23,8 +23,9 @@ function ContactForm() {
   return (
     <div className="bg-blue-50 min-h-screen flex items-center justify-center p-4">
       <div className=" p-8 rounded-lg max-w-4xl w-full">
-        <h1 className="text-4xl font-semibold text-center text-blue-900 m-10">
+        <h1 className="text-4xl font-bold text-center text-blue-900 m-10">
           Call Us or Fill the Form
+
         </h1>
         <p className="text-center text-gray-600">
           Get in touch with us easily. Whether you have questions, feedback, or

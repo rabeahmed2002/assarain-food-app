@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import Logo from '../assets/logo.png'; // Make sure this path is correct
+import React, { useState } from "react";
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [selected, setSelected] = useState('Home');
-  const [isOpen, setIsOpen] = useState(false); // To toggle the mobile menu
+  const [selected, setSelected] = useState("Home");
+  const [isOpen, setIsOpen] = useState(false); 
 
   const handleSelect = (item) => {
     setSelected(item);
@@ -20,7 +20,23 @@ const Navbar = () => {
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
           <div>
-            <img src={Logo} alt="Logo" width={100} height={100} />
+            <img src={Logo} alt="Logo" className="w-24 h-auto" />
+          </div>
+
+          {/* Navigation Links (desktop) */}
+          <div className="hidden lg:flex items-center space-x-8 ml-auto">
+            <a href="#" className="text-gray-500 hover:text-blue-500">
+              For Suppliers
+            </a>
+            <a href="#" className="text-gray-500 hover:text-blue-500">
+              For Retailers
+            </a>
+            <a href="#" className="text-gray-500 hover:text-blue-500">
+              Location
+            </a>
+            <button className="text-sky-400 font-bold border-solid border-2 border-sky-400 px-5 py-2">
+              REQUEST A DEMO
+            </button>
           </div>
 
           {/* Hamburger Icon (mobile) */}
@@ -32,8 +48,8 @@ const Navbar = () => {
               {isOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
+                  fill="none"
                   stroke="currentColor"
                   className="w-6 h-6"
                 >
@@ -47,8 +63,8 @@ const Navbar = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
+                  fill="none"
                   stroke="currentColor"
                   className="w-6 h-6"
                 >
@@ -56,39 +72,17 @@ const Navbar = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
+                    d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
               )}
             </button>
           </div>
-
-          {/* Navigation Links (desktop) */}
-          <ul className="hidden lg:flex space-x-6 text-gray-500 text-base">
-            <li>
-              <a href="#" className="hover:text-blue-500">
-                For Suppliers
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500">
-                For Retailers
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500">
-                Location
-              </a>
-            </li>
-            <button className="text-sky-400 font-bold border-solid border-2 border-sky-400 px-5 py-2">
-              REQUEST A QUOTE
-            </button>
-          </ul>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500">
+          <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500 text-center">
             <li>
               <a href="#" className="hover:text-blue-500">
                 For Suppliers
@@ -105,58 +99,73 @@ const Navbar = () => {
               </a>
             </li>
             <button className="text-sky-400 font-bold border-solid border-2 border-sky-400 px-5 py-2">
-              REQUEST A QUOTE
+              REQUEST A DEMO
             </button>
           </ul>
         )}
       </nav>
 
       {/* Divider */}
-      <hr className="border-gray-100 border-t-1 my-1" />
+      <hr className="border-gray-100 my-1" />
 
-      {/* Secondary Navbar (Links) */}
-      <nav className="text-gray-500 bg-white shadow-sm">
+      {/* Secondary Navbar */}
+      <nav className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-2">
-          <ul className="hidden lg:flex space-x-8 text-lg">
-            {['Home', 'About Us', 'What We Do', 'Brands', 'News', 'Careers', 'Contact Us'].map(
-              (item) => (
-                <li key={item}>
-                  <a
-                    className={`hover:text-gray-500 ${
-                      selected === item
-                        ? 'font-bold border-b-2 border-blue-500 text-gray-800'
-                        : ''
-                    }`}
-                    onClick={() => handleSelect(item)}
-                    href="#"
-                  >
-                    {item}
-                  </a>
-                </li>
-              )
-            )}
+          {/* Desktop Secondary Navbar */}
+          <ul className="hidden lg:flex space-x-8 text-gray-500 text-lg">
+            {[
+              "Home",
+              "About Us",
+              "What We Do",
+              "Brands",
+              "News",
+              "Careers",
+              "Contact Us",
+            ].map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  className={`hover:text-blue-500 ${
+                    selected === item
+                      ? "font-bold border-b-2 border-blue-500 text-gray-800"
+                      : ""
+                  }`}
+                  onClick={() => handleSelect(item)}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
 
-          {/* Mobile Menu for Secondary Navbar */}
-          <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500">
-            {['Home', 'About Us', 'What We Do', 'Brands', 'News', 'Careers', 'Contact Us'].map(
-              (item) => (
+          {/* Mobile Secondary Navbar */}
+          {isOpen && (
+            <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500 text-center">
+              {[
+                "Home",
+                "About Us",
+                "What We Do",
+                "Brands",
+                "News",
+                "Careers",
+                "Contact Us",
+              ].map((item) => (
                 <li key={item}>
                   <a
-                    className={`hover:text-gray-500 ${
+                    href="#"
+                    className={`hover:text-blue-500 ${
                       selected === item
-                        ? 'font-bold border-b-2 border-blue-500 text-gray-800'
-                        : ''
+                        ? "font-bold border-b-2 border-blue-500 text-gray-800"
+                        : ""
                     }`}
                     onClick={() => handleSelect(item)}
-                    href="#"
                   >
                     {item}
                   </a>
                 </li>
-              )
-            )}
-          </ul>
+              ))}
+            </ul>
+          )}
         </div>
       </nav>
     </div>
