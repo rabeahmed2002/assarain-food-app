@@ -1,10 +1,9 @@
-import React from "react";
-import man from "../assets/man.png";
+import React from 'react'
+import man from '../assets/man.png'
 
 const AssarainFoodProducts = () => {
   return (
     <div className="bg-blue-900 text-white py-10 px-5 md:px-20">
-      {/* Title Section */}
       <div className="text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Assarain Food Products L.L.C.
@@ -18,9 +17,7 @@ const AssarainFoodProducts = () => {
         </p>
       </div>
 
-      {/* Content Section */}
       <div className="mt-10 flex flex-col md:flex-row gap-8">
-        {/* Text Content */}
         <div className="md:w-2/3">
           <p className="mb-4 leading-7">
             Our commitment to maintaining high standards, delivering superior
@@ -46,17 +43,17 @@ const AssarainFoodProducts = () => {
           </p>
         </div>
 
-        {/* Image Content */}
+        {/* Image  */}
         <div className="md:w-1/2 flex justify-center">
           <img
             src={man}
             alt="Assarain Food Products"
-            className="w-full h-auto object-contain"  // Maintain aspect ratio and prevent stretching
+            className="w-full h-auto object-contain"
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AssarainFoodProducts;
+export default AssarainFoodProducts

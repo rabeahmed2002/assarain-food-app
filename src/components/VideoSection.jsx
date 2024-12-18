@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const VideoSection = () => {
   return (
@@ -15,7 +15,7 @@ const VideoSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default VideoSection;
+export default VideoSection

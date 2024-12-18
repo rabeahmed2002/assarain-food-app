@@ -1,30 +1,27 @@
-import React, { useState } from 'react';
-import Logo from '../assets/logo.png'; // Ensure this path is correct
+import React, { useState } from 'react'
+import Logo from '../assets/logo.png'
 
 const Navbar = () => {
-  const [selected, setSelected] = useState('Home');
-  const [isOpen, setIsOpen] = useState(false); // To toggle the mobile menu
+  const [selected, setSelected] = useState('Home')
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleSelect = (item) => {
-    setSelected(item);
-    setIsOpen(false); // Close menu on selection for better UX
-  };
+    setSelected(item)
+    setIsOpen(false)
+  }
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div>
-      {/* Main Navbar */}
       <nav className="bg-white p-4">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Logo */}
           <div>
             <img src={Logo} alt="Logo" width={100} height={100} />
           </div>
 
-          {/* Navigation Links (desktop) */}
           <div className="hidden lg:flex items-center space-x-8 ml-auto">
             <a href="#suppliers" className="text-gray-500 hover:text-blue-500">
               For Suppliers
@@ -40,7 +37,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Hamburger Icon (mobile) */}
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
@@ -81,7 +77,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500">
             <li>
@@ -118,15 +113,47 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Divider */}
       <hr className="border-gray-100 border-t-1 my-1" />
 
-      {/* Secondary Navbar (Links) */}
       <nav className="text-gray-500 bg-white shadow-sm">
         <div className="container mx-auto px-4 py-2">
           <ul className="hidden lg:flex space-x-8 text-lg">
-            {['Home', 'About Us', 'What We Do', 'Brands', 'News', 'Careers', 'Contact Us'].map(
-              (item) => (
+            {[
+              'Home',
+              'About Us',
+              'What We Do',
+              'Brands',
+              'News',
+              'Careers',
+              'Contact Us',
+            ].map((item) => (
+              <li key={item}>
+                <a
+                  className={`hover:text-gray-500 ${
+                    selected === item
+                      ? 'font-bold border-b-2 border-blue-500 text-gray-800'
+                      : ''
+                  }`}
+                  onClick={() => handleSelect(item)}
+                  href={`#${item.replace(/\s+/g, '-').toLowerCase()}`}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {isOpen && (
+            <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500">
+              {[
+                'Home',
+                'About Us',
+                'What We Do',
+                'Brands',
+                'News',
+                'Careers',
+                'Contact Us',
+              ].map((item) => (
                 <li key={item}>
                   <a
                     className={`hover:text-gray-500 ${
@@ -140,36 +167,13 @@ const Navbar = () => {
                     {item}
                   </a>
                 </li>
-              )
-            )}
-          </ul>
-
-          {/* Mobile Menu for Secondary Navbar */}
-          {isOpen && (
-            <ul className="lg:hidden flex flex-col space-y-4 mt-4 text-gray-500">
-              {['Home', 'About Us', 'What We Do', 'Brands', 'News', 'Careers', 'Contact Us'].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      className={`hover:text-gray-500 ${
-                        selected === item
-                          ? 'font-bold border-b-2 border-blue-500 text-gray-800'
-                          : ''
-                      }`}
-                      onClick={() => handleSelect(item)}
-                      href={`#${item.replace(/\s+/g, '-').toLowerCase()}`}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              ))}
             </ul>
           )}
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

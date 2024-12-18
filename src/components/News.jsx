@@ -36,7 +36,6 @@ const FeaturedNews = () => {
 
   return (
     <div className="bg-white py-20 px-5 md:px-20">
-      {/* Section Title */}
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-900 relative">
           Featured Assarain News
@@ -51,7 +50,6 @@ const FeaturedNews = () => {
         </p>
       </div>
 
-      {/* News Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {newsItems.map((item) => (
           <div key={item.id} className=" overflow-hidden bg-white">

@@ -2,9 +2,8 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <section  className="py-16 bg-white text-gray-700">
+    <section className="py-16 bg-white text-gray-700">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 relative">
             About Us
@@ -23,9 +22,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-12 text-center">
-          {/* Global Brands */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">200+</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
@@ -37,7 +34,6 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Warehouses */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">20+</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
@@ -49,7 +45,6 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Pallet Capacity */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">85,000+</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
@@ -61,7 +56,6 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Own Vehicles */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">300+</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
@@ -73,7 +67,6 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Skilled Employees */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">1000+</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
@@ -85,7 +78,6 @@ const AboutUs = () => {
             </p>
           </div>
 
-          {/* Omni Channel Coverage */}
           <div>
             <h3 className="text-6xl font-bold text-blue-500 mb-2">Omni</h3>
             <h4 className="text-2xl font-semibold text-gray-900 mb-1">
