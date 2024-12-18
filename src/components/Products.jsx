@@ -1,5 +1,5 @@
 import React from "react";
-import man from "../assets/man.png"
+import man from "../assets/man.png";
 
 const AssarainFoodProducts = () => {
   return (
@@ -51,14 +51,11 @@ const AssarainFoodProducts = () => {
           <img
             src={man}
             alt="Assarain Food Products"
-            className="w-full h-full"
-            class="scale-x-[-1]"
+            className="w-full h-auto object-contain"  // Maintain aspect ratio and prevent stretching
           />
         </div>
       </div>
-      
     </div>
-    
   );
 };
 

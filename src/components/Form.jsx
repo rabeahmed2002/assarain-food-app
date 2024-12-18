@@ -1,187 +1,128 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import { FaPhone, FaClock, FaMapMarkerAlt } from 'react-icons/fa' // Icons used
 
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    supplierOrRetailer: "supplier",
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form data: ", formData);
-  };
+const ContactForm = () => {
+  const [isSupplier, setIsSupplier] = useState(true)
 
   return (
-    <div className="bg-blue-50 min-h-screen flex items-center justify-center p-4">
-      <div className=" p-8 rounded-lg max-w-4xl w-full">
-        <h1 className="text-4xl font-bold text-center text-blue-900 m-10">
+    <div className="bg-blue-50 min-h-screen flex items-center justify-center py-12">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <h1 className="text-3xl font-bold text-center text-blue-900 mb-4 relative">
           Call Us or Fill the Form
-
+          <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-blue-500 mt-4"></span>
         </h1>
-        <p className="text-center text-gray-600">
+        <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
           Get in touch with us easily. Whether you have questions, feedback, or
-          inquiries, we're here to assist you.
-        </p>
-        <p className="text-center text-gray-600 mb-10">
-        Contact our team through the provided methods, and we'll respond promptly
+          inquiries, we’re here to assist you. Contact our team through the
+          provided methods, and we'll respond promptly.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        {/* Main Content */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           {/* Contact Info */}
-          <div className="space-y-4 text-blue-900">
-            <div className="flex items-center">
-              <svg
-                className="w-6 h-6 mr-3 text-blue-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 10l1.89 5.66a1 1 0 00.95.69h10.32a1 1 0 00.95-.69L21 10M4 10l-.894 1.788A1 1 0 003 13v4h18v-4a1 1 0 00-.894-1.788L20 10M5 10h14M4 6h16l.89 4.67a1 1 0 01-.95 1.33H4.06a1 1 0 01-.95-1.33L4 6z"
-                />
-              </svg>
-              <span>+968 1234 5678</span>
+          <div className="space-y-6 w-full md:w-1/3">
+            {/* Phone */}
+            <div className="flex items-start">
+              <FaPhone className="text-blue-600 text-2xl mr-4" />
+              <div>
+                <p className="text-blue-900 font-bold">+968 1234 5678</p>
+                <p className="text-gray-600">Don’t hesitate to contact us!</p>
+              </div>
             </div>
-            <div className="flex items-center">
-              <svg
-                className="w-6 h-6 mr-3 text-blue-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3v6a2 2 0 002 2h2l2 2v-2h10a2 2 0 002-2V3M3 10h10"
-                />
-              </svg>
-              <span>Mon - Fri: 9:00 - 19:00</span>
+
+            {/* Working Time */}
+            <div className="flex items-start">
+              <FaClock className="text-blue-600 text-2xl mr-4" />
+              <div>
+                <p className="text-blue-900 font-bold">Working Time</p>
+                <p className="text-gray-600">
+                  Mon - Fri: 9:00 - 19:00 / Closed on Weekends
+                </p>
+              </div>
             </div>
-            <div className="flex items-center">
-              <svg
-                className="w-6 h-6 mr-3 text-blue-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 8h18v13H3V8zM7 12h.01M7 16h.01M10 16h4M10 12h4M17 12h.01M17 16h.01"
-                />
-              </svg>
-              <span>123 Main Street, Muscat, Oman</span>
+
+            {/* Company Address */}
+            <div className="flex items-start">
+              <FaMapMarkerAlt className="text-blue-600 text-2xl mr-4" />
+              <div>
+                <p className="text-blue-900 font-bold">Company Headquarters</p>
+                <p className="text-gray-600">123 Main Street, Muscat, Oman</p>
+              </div>
             </div>
           </div>
 
-          {/* Form */}
-          <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-4">
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="supplierOrRetailer"
-                    value="supplier"
-                    checked={formData.supplierOrRetailer === "supplier"}
-                    onChange={handleInputChange}
-                    className="mr-2"
-                  />
-                  I am a Supplier
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="supplierOrRetailer"
-                    value="retailer"
-                    checked={formData.supplierOrRetailer === "retailer"}
-                    onChange={handleInputChange}
-                    className="mr-2"
-                  />
-                  I am a Retailer
-                </label>
+          {/* Form Section */}
+          <div className="w-full md:w-2/3 p-8 ">
+            {/* Radio Buttons */}
+            <div className="flex items-center justify-start mb-4 space-x-4">
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  className="form-radio"
+                  name="role"
+                  checked={isSupplier}
+                  onChange={() => setIsSupplier(true)}
+                />
+                <span>I am a Supplier</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  className="form-radio"
+                  name="role"
+                  checked={!isSupplier}
+                  onChange={() => setIsSupplier(false)}
+                />
+                <span>I am a Retailer</span>
+              </label>
+            </div>
+
+            {/* Form */}
+            <form className="space-y-6">
+              <div className="flex flex-col md:flex-row gap-4">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full md:w-1/2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="w-full md:w-1/2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  placeholder="First Name"
-                  className="p-3 border border-gray-300 rounded"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  placeholder="Last Name"
-                  className="p-3 border border-gray-300 rounded"
-                  required
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <input
                   type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   placeholder="Email Address"
-                  className="p-3 border border-gray-300 rounded"
-                  required
+                  className="w-full md:w-1/2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
+                  type="text"
                   placeholder="Phone Number"
-                  className="p-3 border border-gray-300 rounded"
-                  required
+                  className="w-full md:w-1/2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
                 placeholder="Your Message"
-                rows="4"
-                className="w-full p-3 border border-gray-300 rounded"
-                required
+                className="w-full h-32 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
 
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700"
+                className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md"
               >
-                Submit
+                SUBMIT
               </button>
             </form>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ContactForm;
+export default ContactForm

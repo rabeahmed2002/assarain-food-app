@@ -12,17 +12,40 @@ import VideoSection from './components/VideoSection'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" class="scroll-smooth">
       <Navbar />
-      <Hero />
-      <Brands />
-      <Solutions />
-      <AboutUs />
+
+      <div id="home">
+        <Hero />
+      </div>
+
+      <div id="brands">
+        <Brands />
+      </div>
+
+      <div id="what-we-do">
+        <Solutions />
+      </div>
+
+      <div id="about-us">
+        <AboutUs />
+      </div>
+
       <Products />
       <VideoSection />
-      <JoinOurTeam />
-      <FeaturedNews />
-      <ContactForm />
+
+      <div id="careers">
+        <JoinOurTeam />
+      </div>
+
+      <div id="news">
+        <FeaturedNews />
+      </div>
+
+      <div id="contact-us">
+        <ContactForm />
+      </div>
+
       <Footer />
     </div>
   )
