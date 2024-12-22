@@ -49,6 +49,7 @@ const AssarainFoodProducts = () => {
             src={man}
             alt="Assarain Food Products"
             className="w-full h-auto object-contain"
+            loading="lazy"
           />
         </div>
       </div>

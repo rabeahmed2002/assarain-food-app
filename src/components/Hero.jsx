@@ -10,6 +10,7 @@ const DistributionSection = () => {
           src={warehouseImage}
           alt="Warehouse"
           className="w-full h-full object-cover scale-x-[-1]"
+          loading="lazy" 
         />
       </div>
 
@@ -30,7 +31,7 @@ const DistributionSection = () => {
           <div className="w-full bg-cyan-500/80 flex flex-col justify-center items-center text-white py-6 md:py-8 md:w-[35%]">
             <div className="mb-3 md:mb-4">
               <div className="w-12 md:w-20 h-12 md:h-20 rounded-full flex items-center justify-center mb-3 md:mb-4 cursor-pointer">
-                <img src={play} alt="Play Button" />
+                <img src={play} alt="Play Button" loading="lazy" />
               </div>
             </div>
             <p className="text-center text-xs md:text-sm mb-2 leading-tight">

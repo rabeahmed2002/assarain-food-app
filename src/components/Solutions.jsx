@@ -51,6 +51,7 @@ const Solutions = () => {
             alt="Worker"
             className="h-full md:h-full w-full "
             class="scale-x-[-1]"
+            loading="lazy"
           />
         </div>
       </div>

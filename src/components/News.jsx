@@ -53,7 +53,11 @@ const FeaturedNews = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {newsItems.map((item) => (
           <div key={item.id} className=" overflow-hidden bg-white">
-            <img src={item.image} className="w-full h-48 object-cover" />
+            <img
+              src={item.image}
+              className="w-full h-48 object-cover"
+              loading="lazy"
+            />
             <div className="p-5">
               <p className="text-blue-500 text-sm font-semibold mb-2">
                 {item.category}
